@@ -40,11 +40,7 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
-        getData()
         navController = navigationController
-    }
-    
-    private func getData() {
         interactor?.fetchData()
     }
     
@@ -108,8 +104,8 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
         }
         let save = UIAlertAction(title: saveButtonTitle, style: .default, handler: { [weak self] action in
             guard let textField = ac.textFields?[0], let folderName = textField.text else { return }
-            let request = FoldersList.FoldersListRequest(title: folderName)
-            self?.interactor?.saveNewFolder(request: request)
+            let request = FoldersList.FoldersListRequest(title: folderName, index: nil)
+            self?.interactor?.saveNewFolder(request)
             self?.tableView.reloadData()
         })
         save.isEnabled = false
@@ -153,7 +149,10 @@ extension FoldersListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "delete", handler: { action, view, handler in
+        let delete = UIContextualAction(style: .destructive, title: "delete", handler: { [weak self] _, _, _ in
+            let request = FoldersList.FoldersListRequest(title: nil, index: indexPath.row)
+            self?.interactor?.removeFolder(request)
+            self?.tableView.reloadData()
         })
         let configuration = UISwipeActionsConfiguration(actions: [delete])
         configuration.performsFirstActionWithFullSwipe = false

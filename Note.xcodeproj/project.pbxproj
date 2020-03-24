@@ -20,6 +20,10 @@
 		7E53596624239EBB0065DE43 /* NoteDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E53596524239EBB0065DE43 /* NoteDetailsInteractor.swift */; };
 		7E53596824239F8D0065DE43 /* NoteDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E53596724239F8D0065DE43 /* NoteDetailsRouter.swift */; };
 		7E53596A2423A2320065DE43 /* NoteDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5359692423A2320065DE43 /* NoteDetailsModel.swift */; };
+		7E5598EA242A2AAF00551ACE /* NoteCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5598E6242A2AAF00551ACE /* NoteCD+CoreDataClass.swift */; };
+		7E5598EB242A2AAF00551ACE /* NoteCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5598E7242A2AAF00551ACE /* NoteCD+CoreDataProperties.swift */; };
+		7E5598EC242A2AAF00551ACE /* FolderCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5598E8242A2AAF00551ACE /* FolderCD+CoreDataClass.swift */; };
+		7E5598ED242A2AAF00551ACE /* FolderCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5598E9242A2AAF00551ACE /* FolderCD+CoreDataProperties.swift */; };
 		7E5C2B742423B9E6001A3CCD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C2B732423B9E6001A3CCD /* CoreDataStack.swift */; };
 		7EA5AB0E241F9ADC00EFE35C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5AB0D241F9ADC00EFE35C /* AppDelegate.swift */; };
 		7EA5AB10241F9ADC00EFE35C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5AB0F241F9ADC00EFE35C /* SceneDelegate.swift */; };
@@ -58,6 +62,10 @@
 		7E53596524239EBB0065DE43 /* NoteDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsInteractor.swift; sourceTree = "<group>"; };
 		7E53596724239F8D0065DE43 /* NoteDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsRouter.swift; sourceTree = "<group>"; };
 		7E5359692423A2320065DE43 /* NoteDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsModel.swift; sourceTree = "<group>"; };
+		7E5598E6242A2AAF00551ACE /* NoteCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E5598E7242A2AAF00551ACE /* NoteCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E5598E8242A2AAF00551ACE /* FolderCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FolderCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E5598E9242A2AAF00551ACE /* FolderCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FolderCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7E5C2B732423B9E6001A3CCD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7EA5AB0A241F9ADC00EFE35C /* Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Note.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA5AB0D241F9ADC00EFE35C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +127,26 @@
 			name = NoteDetails;
 			sourceTree = "<group>";
 		};
+		7E5598E4242A292D00551ACE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7E5C2B732423B9E6001A3CCD /* CoreDataStack.swift */,
+				7E5598E5242A293D00551ACE /* Entities */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		7E5598E5242A293D00551ACE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7E5598E6242A2AAF00551ACE /* NoteCD+CoreDataClass.swift */,
+				7E5598E7242A2AAF00551ACE /* NoteCD+CoreDataProperties.swift */,
+				7E5598E8242A2AAF00551ACE /* FolderCD+CoreDataClass.swift */,
+				7E5598E9242A2AAF00551ACE /* FolderCD+CoreDataProperties.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		7EA5AB01241F9ADC00EFE35C = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +168,7 @@
 			children = (
 				7EA5AB0D241F9ADC00EFE35C /* AppDelegate.swift */,
 				7EA5AB0F241F9ADC00EFE35C /* SceneDelegate.swift */,
-				7E5C2B732423B9E6001A3CCD /* CoreDataStack.swift */,
+				7E5598E4242A292D00551ACE /* CoreData */,
 				7EA5AB2A241FA99C00EFE35C /* Scenes */,
 				7EA5AB19241F9ADD00EFE35C /* Assets.xcassets */,
 				7EA5AB1B241F9ADD00EFE35C /* LaunchScreen.storyboard */,
@@ -285,13 +313,17 @@
 				7EB1E6292420FB6C009E4D09 /* FoldersListConfigurator.swift in Sources */,
 				7E53595D24239CFC0065DE43 /* NoteDetailsViewController.swift in Sources */,
 				7E5C2B742423B9E6001A3CCD /* CoreDataStack.swift in Sources */,
+				7E5598EA242A2AAF00551ACE /* NoteCD+CoreDataClass.swift in Sources */,
 				7EB1E6262420FACD009E4D09 /* FoldersListViewController.swift in Sources */,
 				7ED72DF024228D0500C6E163 /* NotesListViewController.swift in Sources */,
 				7E53595024235EFA0065DE43 /* FoldersListRouter.swift in Sources */,
+				7E5598EC242A2AAF00551ACE /* FolderCD+CoreDataClass.swift in Sources */,
 				7E53596224239DC80065DE43 /* NoteDetailsProtocols.swift in Sources */,
+				7E5598ED242A2AAF00551ACE /* FolderCD+CoreDataProperties.swift in Sources */,
 				7EA5AB0E241F9ADC00EFE35C /* AppDelegate.swift in Sources */,
 				7E53596A2423A2320065DE43 /* NoteDetailsModel.swift in Sources */,
 				7ED72DF324228D4C00C6E163 /* NotesConfigurator.swift in Sources */,
+				7E5598EB242A2AAF00551ACE /* NoteCD+CoreDataProperties.swift in Sources */,
 				7EB1E63124210113009E4D09 /* FoldersListPresenter.swift in Sources */,
 				7EB1E62F2420FDA0009E4D09 /* FoldersListInteractor.swift in Sources */,
 				7E53596624239EBB0065DE43 /* NoteDetailsInteractor.swift in Sources */,

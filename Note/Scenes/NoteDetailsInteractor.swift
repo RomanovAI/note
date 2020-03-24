@@ -11,7 +11,7 @@ import Foundation
 class NoteDetailsInteractor: NoteDetailsInteractorProtocol {
 
     var presenter: NoteDetailsPresenterProtocol?
-    
+    let worker = FoldersListWorker.sharedInstance
     var dataSource: Note?
     
     func fetchData() {
@@ -21,7 +21,7 @@ class NoteDetailsInteractor: NoteDetailsInteractorProtocol {
     }
     
     func saveInDataSource(note: Note) {
-           dataSource = note
+           print("note=", note)
        }
     
 }

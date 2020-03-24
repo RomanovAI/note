@@ -21,7 +21,8 @@ protocol FoldersListInteractorProtocol {
     var dataSource: [Folder]? { get }
     
     func fetchData()
-    func saveNewFolder(request: FoldersList.FoldersListRequest)
+    func saveNewFolder(_ request: FoldersList.FoldersListRequest)
+    func removeFolder(_ request: FoldersList.FoldersListRequest)
 }
 
 protocol FoldersListPresenterProtocol {

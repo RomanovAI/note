@@ -11,17 +11,27 @@ import CoreData
 
 class FoldersListWorker {
     
-    var foldersList: [Folder] = {
-        var foldersList = [Folder]()
-        var folder1 = Folder(title: "Заметки", count: 10)
-        folder1.notesList = [Note(title: "lala", date: "22-10-2020", subtitle: "asd")]
-        foldersList.append(folder1)
-        return foldersList
-    }()
+    static let sharedInstance = FoldersListWorker()
     
+    let coreData = CoreDataStack.sharedInstance
     
-    func saveNewFolderInCoreData(folder: Folder) {
-       
+    func fetchData() -> [Folder] {
+        let foldersCD = coreData.fetchData()
+        var folders: [Folder] = []
+        
+        for folder in foldersCD {
+            let folder = Folder(id: folder.id, title: folder.title, notesCount: Int(folder.notesCount))
+            folders.append(folder)
+        }
+        return folders
+    }
+    
+    func saveNewFolder(folder: Folder) {
+        coreData.addFolder(folder: folder)
+    }
+    
+    func removeFolder(folder: Folder) {
+        coreData.removeFolder(folder: folder)
     }
 
 }

@@ -13,23 +13,27 @@ import UIKit
 class FoldersListInteractor: FoldersListInteractorProtocol {
     
     var presenter: FoldersListPresenterProtocol?
-    var worker = FoldersListWorker()
+    var worker = FoldersListWorker.sharedInstance
     var dataSource: [Folder]?
     
-    init() {
-        let foldersList = worker.foldersList
-        dataSource = foldersList
-    }
-    
     func fetchData() {
+        dataSource = worker.fetchData()
         guard let data = dataSource else { return }
         let response = FoldersList.FoldersListResponse(foldersList: data)
         presenter?.presentFoldersList(response: response)
     }
     
-    func saveNewFolder(request: FoldersList.FoldersListRequest) {
-        let newFolder = Folder(title: request.title, count: 0)
-        worker.foldersList.append(newFolder)
+    func saveNewFolder(_ request: FoldersList.FoldersListRequest) {
+        guard let title = request.title else { return }
+        let id = "\(Date())"
+        let newFolder = Folder(id: id, title: title, notesCount: 0)
+        worker.saveNewFolder(folder: newFolder)
+        fetchData()
+    }
+    
+    func removeFolder(_ request: FoldersList.FoldersListRequest) {
+        guard let index = request.index, let folder = dataSource?[index] else { return }
+        worker.removeFolder(folder: folder)
         fetchData()
     }
     

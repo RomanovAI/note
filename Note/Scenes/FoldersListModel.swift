@@ -11,8 +11,9 @@ import UIKit
 
 
 struct Folder {
+    let id: String
     let title: String
-    let count: Int
+    let notesCount: Int
     
     var notesList = [Note]()
 }
@@ -20,7 +21,8 @@ struct Folder {
 enum FoldersList {
     
     struct FoldersListRequest {
-        let title: String
+        let title: String?
+        let index: Int?
     }
     
     struct FoldersListResponse {
@@ -79,7 +81,7 @@ class FolderCellModel {
     }
     
     var count: String {
-        return String(folder.count)
+        return String(folder.notesCount)
     }
     
     init(folder: Folder) {

@@ -13,8 +13,11 @@ class NoteDetailsViewController: UIViewController, NoteDetailsViewControllerProt
     var interactor: NoteDetailsInteractorProtocol?
     var router: NoteDetailsRouterProtocol?
     
+    private let backgroundColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
+    
     @IBOutlet weak var textView: UITextView! {
         didSet {
+            textView.backgroundColor = backgroundColor
             textView.text = ""
         }
     }
@@ -31,7 +34,7 @@ class NoteDetailsViewController: UIViewController, NoteDetailsViewControllerProt
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.fetchData()
-        
+        view.backgroundColor = backgroundColor
     }
     
     override func viewWillDisappear(_ animated: Bool) {

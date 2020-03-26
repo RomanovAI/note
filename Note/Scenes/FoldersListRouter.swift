@@ -15,10 +15,11 @@ class FoldersListRouter: FoldersListRouterProtocol {
     var interactor: FoldersListInteractorProtocol?
     var view: FoldersListViewControllerProtocol?
     
+    // MARK: - Переход в список заметок текущей папки
     func goToNotesList(at index: Int) {
-        guard let notesList = interactor?.dataSource?[index].notesList else { return }
+        guard let folder = interactor?.folders?[index] else { return }
         let notesListViewController = NotesListViewController()
-        notesListViewController.router?.interactor?.saveInDataSource(notesList: notesList)
+        notesListViewController.router?.interactor?.passCurrentFolder(folder: folder)
         view?.navController?.pushViewController(notesListViewController, animated: true)
     }
     

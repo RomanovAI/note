@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="FolderCD" representedClassName="FolderCD" syncable="YES">
+    <entity name="Folder" representedClassName="Folder" syncable="YES">
         <attribute name="id" attributeType="String"/>
         <attribute name="notesCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
-        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="NoteCD" inverseName="folder" inverseEntity="NoteCD"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Note" inverseName="folder" inverseEntity="Note"/>
     </entity>
-    <entity name="NoteCD" representedClassName="NoteCD" syncable="YES">
+    <entity name="Note" representedClassName="Note" syncable="YES">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="String"/>
         <attribute name="subtitle" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
-        <relationship name="folder" maxCount="1" deletionRule="Nullify" destinationEntity="FolderCD" inverseName="notes" inverseEntity="FolderCD"/>
+        <relationship name="folder" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="notes" inverseEntity="Folder"/>
     </entity>
     <elements>
-        <element name="FolderCD" positionX="-63" positionY="-18" width="128" height="28"/>
-        <element name="NoteCD" positionX="121.26171875" positionY="-19.625" width="128" height="28"/>
+        <element name="Folder" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Note" positionX="121.26171875" positionY="-19.625" width="128" height="118"/>
     </elements>
 </model>

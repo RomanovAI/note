@@ -20,7 +20,7 @@ class NotesListPresenter: NotesListPresenterProtocol {
         setupViewController(viewModel: viewModel)
     }
     
-    func setupViewController(viewModel: NotesList.NotesListViewModel) {
+    private func setupViewController(viewModel: NotesList.NotesListViewModel) {
         view?.setupViewController(with: viewModel)
     }
 }

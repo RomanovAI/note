@@ -14,7 +14,6 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
     var interactor: FoldersListInteractorProtocol?
     var router: FoldersListRouterProtocol?
     
-    private let backgroundColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
     private let cellId = "FolderViewCell"
     private var tableModel: FolderTableModel?
     
@@ -23,7 +22,7 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
             tableView.dataSource = self
             tableView.delegate = self
             tableView.register(UINib(nibName: cellId, bundle: .main), forCellReuseIdentifier: cellId)
-            tableView.backgroundColor = backgroundColor
+            tableView.backgroundColor = UIColor.backgroundColor
             tableView.tableFooterView = UIView()
         }
     }
@@ -36,14 +35,20 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = backgroundColor
+        view.backgroundColor = UIColor.backgroundColor
         navController = navigationController
         interactor?.fetchData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    // MARK: - Общая настройка вью
     func setupViewController(viewModel: FoldersList.FoldersViewModel) {
         setupNavigationBar(title: viewModel.title, barButtonTitle: viewModel.rightNavigationBarButtonTitle)
         setupToolBar(toolBarButtonTitle: viewModel.RightToolBarButtonTitle)
@@ -56,6 +61,7 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
         tableModel = viewModel.folderTableMode
     }
     
+    // MARK: - Настройка навбара
     private func setupNavigationBar(title: String, barButtonTitle: String) {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = title
@@ -68,6 +74,7 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
         print("sss")
     }
     
+    // MARK: - Настройка тулбара
     private func setupToolBar(toolBarButtonTitle: String) {
         navigationController?.isToolbarHidden = false
         var items = [UIBarButtonItem]()
@@ -90,7 +97,7 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
     private var alertControllerSaveButtonTitle: String?
     private var alertControllerCancelButtonTitle: String?
     
-    
+    // MARK: - Настройка алерт контроля добавления папки
     @objc private func tapRightToolBarButton() {
         guard let title = alertControllerTitle,
             let message = alertControllerMessage,
@@ -105,7 +112,7 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
         let save = UIAlertAction(title: saveButtonTitle, style: .default, handler: { [weak self] action in
             guard let textField = ac.textFields?[0], let folderName = textField.text else { return }
             let request = FoldersList.FoldersListRequest(title: folderName, index: nil)
-            self?.interactor?.saveNewFolder(request)
+            self?.interactor?.addFolder(request)
             self?.tableView.reloadData()
         })
         save.isEnabled = false
@@ -116,6 +123,7 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
         present(ac, animated: true)
     }
     
+    // MARK: - В алерт контролере кнопка сохранить досутпна или нет
     @objc private func alertTextFieldDidChange(field: UITextField) {
         guard let alertController = presentedViewController as? UIAlertController else { return }
         let textField = alertController.textFields![0]
@@ -125,7 +133,7 @@ class FoldersListViewController: UIViewController, FoldersListViewControllerProt
     
 }
 
-
+// MARK: - Табличные расширения
 extension FoldersListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

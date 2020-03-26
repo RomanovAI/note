@@ -7,16 +7,6 @@
 //
 
 import Foundation
-import UIKit
-
-
-struct Folder {
-    let id: String
-    let title: String
-    let notesCount: Int
-    
-    var notesList = [Note]()
-}
 
 enum FoldersList {
     

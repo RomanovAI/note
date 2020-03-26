@@ -14,9 +14,7 @@ class NotesListViewController: UIViewController, NotesListViewControllerProtocol
     var interactor: NotesListInteractorProtocol?
     var router: NotesListRouterProtocol?
     
-    private let backgroundColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
     private let cellId = "NoteViewCell"
-    
     private var tableModel: NoteTableModel?
     
     @IBOutlet weak var tableView: UITableView! {
@@ -24,11 +22,10 @@ class NotesListViewController: UIViewController, NotesListViewControllerProtocol
             tableView.dataSource = self
             tableView.delegate = self
             tableView.register(UINib(nibName: cellId, bundle: .main), forCellReuseIdentifier: cellId)
-            tableView.backgroundColor = backgroundColor
+            tableView.backgroundColor = UIColor.backgroundColor
             tableView.tableFooterView = UIView()
         }
     }
-    
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -39,25 +36,35 @@ class NotesListViewController: UIViewController, NotesListViewControllerProtocol
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.fetchData()
-        view.backgroundColor = backgroundColor
+        view.backgroundColor = UIColor.backgroundColor
         navController = navigationController
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.layoutIfNeeded()
+        interactor?.fetchData()
+        tableView.reloadData()
+    }
     
+    // MARK: - Общая настройка вью
     func setupViewController(with viewModel: NotesList.NotesListViewModel) {
         setupNavigationBar(title: viewModel.title)
         setupToolbar(notesCount: viewModel.notesCount)
         tableModel = viewModel.noteTableModel
     }
     
+    // MARK: - Настройка навбара
     private func setupNavigationBar(title: String) {
         navController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = title
     }
     
+    // MARK: - Настройка тулбара
     private func setupToolbar(notesCount: Int) {
         navController?.isToolbarHidden = false
         let text = "\(notesCount) шт"
@@ -73,13 +80,13 @@ class NotesListViewController: UIViewController, NotesListViewControllerProtocol
         items.append(createNote)
         toolbarItems = items
     }
-    
+    // MARK: - Создание новой заметки
     @objc private func createNewNote() {
         router?.goToDetailsNote(at: nil)
     }
 }
 
-
+// MARK: - Табличные расширения
 extension NotesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -21,8 +21,8 @@ enum NoteDetails {
     
     struct NoteDetailsViewModel {
         let title: String
-        let date: String
-        let subtitle: String
+        let date: Date
+        let subtitle: String?
     }
     
 }

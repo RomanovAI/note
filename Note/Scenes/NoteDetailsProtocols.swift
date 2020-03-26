@@ -16,10 +16,13 @@ protocol NoteDetailsRouterProtocol {
 
 protocol NoteDetailsInteractorProtocol {
     var presenter: NoteDetailsPresenterProtocol? { get set }
-    var dataSource: Note? { get set }
+    var parentFolder: Folder? { get }
+    var note: Note? { get set }
     
-    func saveInDataSource(note: Note)
+    func passCurrentFolderAndCurrentNote(folder: Folder, note: Note?)
     func fetchData()
+    
+    func addNote(title: String)
 }
 
 protocol NoteDetailsPresenterProtocol {

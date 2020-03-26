@@ -18,10 +18,10 @@ protocol FoldersListRouterProtocol {
 
 protocol FoldersListInteractorProtocol {
     var presenter: FoldersListPresenterProtocol? { get set }
-    var dataSource: [Folder]? { get }
+    var folders: [Folder]? { get }
     
     func fetchData()
-    func saveNewFolder(_ request: FoldersList.FoldersListRequest)
+    func addFolder(_ request: FoldersList.FoldersListRequest)
     func removeFolder(_ request: FoldersList.FoldersListRequest)
 }
 

@@ -28,7 +28,7 @@ class NoteViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .gray
-        backgroundColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
+        backgroundColor = UIColor.backgroundColor
     }
     
 }

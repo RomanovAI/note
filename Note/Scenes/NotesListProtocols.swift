@@ -18,10 +18,11 @@ protocol NotesListRouterProtocol {
 
 protocol NotesListInteractorProtocol {
     var presenter: NotesListPresenterProtocol? { get set }
-    var dataSource: [Note]? { get }
+    var parentFolder: Folder? { get }
+    var notes: [Note]? { get }
     
     func fetchData()
-    func saveInDataSource(notesList: [Note])
+    func passCurrentFolder(folder: Folder)
 }
 
 protocol NotesListPresenterProtocol {

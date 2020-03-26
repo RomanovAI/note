@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E02AEC5242CB869006A402D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E02AEC4242CB869006A402D /* UIColor+Extension.swift */; };
+		7E1F7DEC242B52200045CD7C /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1F7DE8242B52200045CD7C /* Note+CoreDataClass.swift */; };
+		7E1F7DED242B52200045CD7C /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1F7DE9242B52200045CD7C /* Note+CoreDataProperties.swift */; };
+		7E1F7DEE242B52200045CD7C /* Folder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1F7DEA242B52200045CD7C /* Folder+CoreDataClass.swift */; };
+		7E1F7DEF242B52200045CD7C /* Folder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1F7DEB242B52200045CD7C /* Folder+CoreDataProperties.swift */; };
 		7E53594E24235AAC0065DE43 /* NotesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E53594D24235AAC0065DE43 /* NotesListModel.swift */; };
 		7E53595024235EFA0065DE43 /* FoldersListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E53594F24235EFA0065DE43 /* FoldersListRouter.swift */; };
 		7E53595324238C250065DE43 /* NotesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E53595224238C250065DE43 /* NotesListRouter.swift */; };
@@ -20,10 +25,6 @@
 		7E53596624239EBB0065DE43 /* NoteDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E53596524239EBB0065DE43 /* NoteDetailsInteractor.swift */; };
 		7E53596824239F8D0065DE43 /* NoteDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E53596724239F8D0065DE43 /* NoteDetailsRouter.swift */; };
 		7E53596A2423A2320065DE43 /* NoteDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5359692423A2320065DE43 /* NoteDetailsModel.swift */; };
-		7E5598EA242A2AAF00551ACE /* NoteCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5598E6242A2AAF00551ACE /* NoteCD+CoreDataClass.swift */; };
-		7E5598EB242A2AAF00551ACE /* NoteCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5598E7242A2AAF00551ACE /* NoteCD+CoreDataProperties.swift */; };
-		7E5598EC242A2AAF00551ACE /* FolderCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5598E8242A2AAF00551ACE /* FolderCD+CoreDataClass.swift */; };
-		7E5598ED242A2AAF00551ACE /* FolderCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5598E9242A2AAF00551ACE /* FolderCD+CoreDataProperties.swift */; };
 		7E5C2B742423B9E6001A3CCD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C2B732423B9E6001A3CCD /* CoreDataStack.swift */; };
 		7EA5AB0E241F9ADC00EFE35C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5AB0D241F9ADC00EFE35C /* AppDelegate.swift */; };
 		7EA5AB10241F9ADC00EFE35C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA5AB0F241F9ADC00EFE35C /* SceneDelegate.swift */; };
@@ -37,7 +38,7 @@
 		7EB1E62D2420FC98009E4D09 /* FoldersListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1E62C2420FC98009E4D09 /* FoldersListModel.swift */; };
 		7EB1E62F2420FDA0009E4D09 /* FoldersListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1E62E2420FDA0009E4D09 /* FoldersListInteractor.swift */; };
 		7EB1E63124210113009E4D09 /* FoldersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1E63024210113009E4D09 /* FoldersListPresenter.swift */; };
-		7EB1E63324210443009E4D09 /* FoldersListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1E63224210443009E4D09 /* FoldersListWorker.swift */; };
+		7EB1E63324210443009E4D09 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1E63224210443009E4D09 /* Worker.swift */; };
 		7ED72DE624222F9E00C6E163 /* FolderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED72DE424222F9E00C6E163 /* FolderViewCell.swift */; };
 		7ED72DE724222F9E00C6E163 /* FolderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED72DE524222F9E00C6E163 /* FolderViewCell.xib */; };
 		7ED72DF024228D0500C6E163 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED72DEE24228D0500C6E163 /* NotesListViewController.swift */; };
@@ -49,6 +50,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E02AEC4242CB869006A402D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		7E1F7DE8242B52200045CD7C /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E1F7DE9242B52200045CD7C /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E1F7DEA242B52200045CD7C /* Folder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Folder+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7E1F7DEB242B52200045CD7C /* Folder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Folder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7E53594D24235AAC0065DE43 /* NotesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListModel.swift; sourceTree = "<group>"; };
 		7E53594F24235EFA0065DE43 /* FoldersListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersListRouter.swift; sourceTree = "<group>"; };
 		7E53595224238C250065DE43 /* NotesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListRouter.swift; sourceTree = "<group>"; };
@@ -62,10 +68,6 @@
 		7E53596524239EBB0065DE43 /* NoteDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsInteractor.swift; sourceTree = "<group>"; };
 		7E53596724239F8D0065DE43 /* NoteDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsRouter.swift; sourceTree = "<group>"; };
 		7E5359692423A2320065DE43 /* NoteDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsModel.swift; sourceTree = "<group>"; };
-		7E5598E6242A2AAF00551ACE /* NoteCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteCD+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7E5598E7242A2AAF00551ACE /* NoteCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7E5598E8242A2AAF00551ACE /* FolderCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FolderCD+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7E5598E9242A2AAF00551ACE /* FolderCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FolderCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7E5C2B732423B9E6001A3CCD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7EA5AB0A241F9ADC00EFE35C /* Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Note.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA5AB0D241F9ADC00EFE35C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +83,7 @@
 		7EB1E62C2420FC98009E4D09 /* FoldersListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersListModel.swift; sourceTree = "<group>"; };
 		7EB1E62E2420FDA0009E4D09 /* FoldersListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersListInteractor.swift; sourceTree = "<group>"; };
 		7EB1E63024210113009E4D09 /* FoldersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersListPresenter.swift; sourceTree = "<group>"; };
-		7EB1E63224210443009E4D09 /* FoldersListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersListWorker.swift; sourceTree = "<group>"; };
+		7EB1E63224210443009E4D09 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		7ED72DE424222F9E00C6E163 /* FolderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewCell.swift; sourceTree = "<group>"; };
 		7ED72DE524222F9E00C6E163 /* FolderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderViewCell.xib; sourceTree = "<group>"; };
 		7ED72DEE24228D0500C6E163 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E1F7DF0242B59000045CD7C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7EB1E63224210443009E4D09 /* Worker.swift */,
+				7E02AEC4242CB869006A402D /* UIColor+Extension.swift */,
+			);
+			name = Common;
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		7E5359542423913A0065DE43 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,10 +151,10 @@
 		7E5598E5242A293D00551ACE /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				7E5598E6242A2AAF00551ACE /* NoteCD+CoreDataClass.swift */,
-				7E5598E7242A2AAF00551ACE /* NoteCD+CoreDataProperties.swift */,
-				7E5598E8242A2AAF00551ACE /* FolderCD+CoreDataClass.swift */,
-				7E5598E9242A2AAF00551ACE /* FolderCD+CoreDataProperties.swift */,
+				7E1F7DE8242B52200045CD7C /* Note+CoreDataClass.swift */,
+				7E1F7DE9242B52200045CD7C /* Note+CoreDataProperties.swift */,
+				7E1F7DEA242B52200045CD7C /* Folder+CoreDataClass.swift */,
+				7E1F7DEB242B52200045CD7C /* Folder+CoreDataProperties.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -169,6 +181,7 @@
 				7EA5AB0D241F9ADC00EFE35C /* AppDelegate.swift */,
 				7EA5AB0F241F9ADC00EFE35C /* SceneDelegate.swift */,
 				7E5598E4242A292D00551ACE /* CoreData */,
+				7E1F7DF0242B59000045CD7C /* Common */,
 				7EA5AB2A241FA99C00EFE35C /* Scenes */,
 				7EA5AB19241F9ADD00EFE35C /* Assets.xcassets */,
 				7EA5AB1B241F9ADD00EFE35C /* LaunchScreen.storyboard */,
@@ -194,7 +207,6 @@
 				7EB1E6282420FB6C009E4D09 /* FoldersListConfigurator.swift */,
 				7EB1E62C2420FC98009E4D09 /* FoldersListModel.swift */,
 				7EB1E62A2420FC02009E4D09 /* FoldersListProtocols.swift */,
-				7EB1E63224210443009E4D09 /* FoldersListWorker.swift */,
 				7EB1E62E2420FDA0009E4D09 /* FoldersListInteractor.swift */,
 				7EB1E63024210113009E4D09 /* FoldersListPresenter.swift */,
 				7EB1E6242420FACD009E4D09 /* FoldersListViewController.swift */,
@@ -309,27 +321,27 @@
 				7EB1E62D2420FC98009E4D09 /* FoldersListModel.swift in Sources */,
 				7E5359572423915E0065DE43 /* NoteViewCell.swift in Sources */,
 				7E53596824239F8D0065DE43 /* NoteDetailsRouter.swift in Sources */,
-				7EB1E63324210443009E4D09 /* FoldersListWorker.swift in Sources */,
+				7E1F7DEE242B52200045CD7C /* Folder+CoreDataClass.swift in Sources */,
+				7EB1E63324210443009E4D09 /* Worker.swift in Sources */,
 				7EB1E6292420FB6C009E4D09 /* FoldersListConfigurator.swift in Sources */,
 				7E53595D24239CFC0065DE43 /* NoteDetailsViewController.swift in Sources */,
 				7E5C2B742423B9E6001A3CCD /* CoreDataStack.swift in Sources */,
-				7E5598EA242A2AAF00551ACE /* NoteCD+CoreDataClass.swift in Sources */,
 				7EB1E6262420FACD009E4D09 /* FoldersListViewController.swift in Sources */,
 				7ED72DF024228D0500C6E163 /* NotesListViewController.swift in Sources */,
 				7E53595024235EFA0065DE43 /* FoldersListRouter.swift in Sources */,
-				7E5598EC242A2AAF00551ACE /* FolderCD+CoreDataClass.swift in Sources */,
 				7E53596224239DC80065DE43 /* NoteDetailsProtocols.swift in Sources */,
-				7E5598ED242A2AAF00551ACE /* FolderCD+CoreDataProperties.swift in Sources */,
 				7EA5AB0E241F9ADC00EFE35C /* AppDelegate.swift in Sources */,
 				7E53596A2423A2320065DE43 /* NoteDetailsModel.swift in Sources */,
 				7ED72DF324228D4C00C6E163 /* NotesConfigurator.swift in Sources */,
-				7E5598EB242A2AAF00551ACE /* NoteCD+CoreDataProperties.swift in Sources */,
 				7EB1E63124210113009E4D09 /* FoldersListPresenter.swift in Sources */,
+				7E1F7DEF242B52200045CD7C /* Folder+CoreDataProperties.swift in Sources */,
 				7EB1E62F2420FDA0009E4D09 /* FoldersListInteractor.swift in Sources */,
+				7E02AEC5242CB869006A402D /* UIColor+Extension.swift in Sources */,
 				7E53596624239EBB0065DE43 /* NoteDetailsInteractor.swift in Sources */,
 				7E53596024239D410065DE43 /* NoteDetailsConfigurator.swift in Sources */,
 				7E53595324238C250065DE43 /* NotesListRouter.swift in Sources */,
 				7EA5AB10241F9ADC00EFE35C /* SceneDelegate.swift in Sources */,
+				7E1F7DEC242B52200045CD7C /* Note+CoreDataClass.swift in Sources */,
 				7E53596424239E910065DE43 /* NoteDetailsPresenter.swift in Sources */,
 				7EA5AB18241F9ADC00EFE35C /* Note.xcdatamodeld in Sources */,
 				7EB1E62B2420FC02009E4D09 /* FoldersListProtocols.swift in Sources */,
@@ -337,6 +349,7 @@
 				7ED72DF52422920E00C6E163 /* NotesListInteractor.swift in Sources */,
 				7ED72DE624222F9E00C6E163 /* FolderViewCell.swift in Sources */,
 				7E53594E24235AAC0065DE43 /* NotesListModel.swift in Sources */,
+				7E1F7DED242B52200045CD7C /* Note+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,13 +8,6 @@
 
 import Foundation
 
-
-struct Note {
-    let title: String
-    let date: String
-    let subtitle: String
-}
-
 enum NotesList {
     
     struct NotesListRequest {
@@ -66,7 +59,7 @@ class NoteCellModel {
         return "\(note.date)"
     }
     
-    var subtitle: String {
+    var subtitle: String? {
         return note.subtitle
     }
     

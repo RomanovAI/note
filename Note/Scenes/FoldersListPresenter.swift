@@ -31,7 +31,8 @@ class FoldersListPresenter: FoldersListPresenterProtocol {
         setupViewController(viewModel: viewModel)
     }
     
-    func setupViewController(viewModel: FoldersList.FoldersViewModel) {
+    // MARK: - Настройка вьюконтроллера
+    private func setupViewController(viewModel: FoldersList.FoldersViewModel) {
         view?.setupViewController(viewModel: viewModel)
     }
     

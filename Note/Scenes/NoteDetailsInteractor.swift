@@ -9,19 +9,35 @@
 import Foundation
 
 class NoteDetailsInteractor: NoteDetailsInteractorProtocol {
-
+    
     var presenter: NoteDetailsPresenterProtocol?
-    let worker = FoldersListWorker.sharedInstance
-    var dataSource: Note?
+    let worker = Worker.sharedInstance
+    var parentFolder: Folder?
+    var note: Note?
     
     func fetchData() {
-        guard let data = dataSource else { return }
-        let response = NoteDetails.NoteDetailsResponse(note: data)
+        guard let note = note else { return }
+        let response = NoteDetails.NoteDetailsResponse(note: note)
         presenter?.presentNote(response: response)
     }
     
-    func saveInDataSource(note: Note) {
-           print("note=", note)
-       }
+    func passCurrentFolderAndCurrentNote(folder: Folder, note: Note?) {
+        parentFolder = folder
+        self.note = note
+    }
+    
+    func addNote(title: String) {
+        guard let folder = parentFolder else { return }
+        let date = Date()
+        var id: String
+        if let noteId = note?.id {
+            id = noteId
+        } else {
+            id = "\(date)"
+        }
+        
+        let subtitle = title
+        worker.addNote(parentFolder: folder, id: id, title: title, date: date, subtitle: subtitle)
+    }
     
 }

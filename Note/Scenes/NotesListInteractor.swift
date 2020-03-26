@@ -12,15 +12,19 @@ import Foundation
 class NotesListInteractor: NotesListInteractorProtocol {
     
     var presenter: NotesListPresenterProtocol?
-    var dataSource: [Note]?
+    let worker = Worker.sharedInstance
+    var parentFolder: Folder?
+    var notes: [Note]?
     
     func fetchData() {
-        guard let data = dataSource else { return }
-        let response = NotesList.NotesListResponse(notesList: data)
+        guard let folder = parentFolder else { return }
+        notes = worker.fetchNotes(parentfolder: folder)
+        guard let notesList = notes else { return }
+        let response = NotesList.NotesListResponse(notesList: notesList)
         presenter?.presentNoteslist(response: response)
     }
     
-    func saveInDataSource(notesList: [Note]) {
-        dataSource = notesList
+    func passCurrentFolder(folder: Folder) {
+        parentFolder = folder
     }
 }

@@ -13,11 +13,10 @@ class NoteDetailsViewController: UIViewController, NoteDetailsViewControllerProt
     var interactor: NoteDetailsInteractorProtocol?
     var router: NoteDetailsRouterProtocol?
     
-    private let backgroundColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
     
     @IBOutlet weak var textView: UITextView! {
         didSet {
-            textView.backgroundColor = backgroundColor
+            textView.backgroundColor = UIColor.backgroundColor
             textView.text = ""
         }
     }
@@ -31,23 +30,27 @@ class NoteDetailsViewController: UIViewController, NoteDetailsViewControllerProt
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.fetchData()
-        view.backgroundColor = backgroundColor
+        view.backgroundColor = UIColor.backgroundColor
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        saveInDataStore()
+        view.layoutIfNeeded()
+        addNote()
     }
     
-    func saveInDataStore() {
-        
+    // MARK: - Создание заметки
+    func addNote() {
+        if !textView.text.isEmpty {
+            interactor?.addNote(title: textView.text)
+        }
     }
-    
     
     func setupViewController(viewModel: NoteDetails.NoteDetailsViewModel) {
-        textView.text = viewModel.title + viewModel.subtitle
+        textView.text = viewModel.title
     }
 }
